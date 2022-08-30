@@ -15,7 +15,7 @@ public class HelloServiceImpl implements HelloService {
     @Override
     public String getHorario() {
 
-        log.info("Teste");
+        log.info("Mensagem exibida com sucesso.");
 
         LocalTime localTime = LocalTime.now();
 

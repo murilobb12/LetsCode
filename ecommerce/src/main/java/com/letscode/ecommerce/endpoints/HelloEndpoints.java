@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloEndpoints  {
 
-
-    @Autowired
-    Horario _horario;
+//
+//    @Autowired
+//    Horario _horario;
 
 //    Logger log = LoggerFactory.getLogger(HelloEndpoints.class);
 
@@ -39,7 +39,7 @@ public class HelloEndpoints  {
 
     @RequestMapping(path = "/hello/{nome}/horario" , method = RequestMethod.GET)
     public ResponseEntity<String> helloWorld(@PathVariable String nome){
-        return new ResponseEntity<String>("Hello " + nome + "! Agora são " + _horario.getHorario() + ". ImplementadoSevice: " + helloService.getHorario() , HttpStatus.OK);
+        return new ResponseEntity<String>("Hello " + nome + "! Agora são "+ /*+ _horario.getHorario() +*/ ". ImplementadoSevice: " + helloService.getHorario() , HttpStatus.OK);
     }
 
 

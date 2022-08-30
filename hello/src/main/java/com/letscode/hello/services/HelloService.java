@@ -6,8 +6,6 @@ import org.slf4j.LoggerFactory;
 
 public interface HelloService {
 
-    Logger log = LoggerFactory.getLogger(HelloService.class);
-
     public String getHorario();
 
 
