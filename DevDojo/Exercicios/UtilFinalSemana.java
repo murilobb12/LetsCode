@@ -16,7 +16,7 @@ public class UtilFinalSemana {
             case 4:
             case 5:
             case 6:
-                System.out.println("Dia útil");
+                System.out.println("Dia útil!");
                 break;
         }
 
