@@ -9,9 +9,13 @@ public interface ClienteService {
 
     List<Cliente> listarTodosClientes();
 
-    boolean novoCliente(ClienteDto clienteDto);
+    boolean novoCliente(ClienteDto cliente);
+
     boolean atualizarCliente(Cliente cliente);
+
     boolean removerCliente(long id);
+
+    Cliente listarCliente(long id);
 
 
 

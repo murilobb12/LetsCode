@@ -1,3 +1,4 @@
+/*
 package com.letscode.ecommerce.endpoints;
 
 import com.letscode.ecommerce.services.HelloService;
@@ -39,9 +40,12 @@ public class HelloEndpoints  {
 
     @RequestMapping(path = "/hello/{nome}/horario" , method = RequestMethod.GET)
     public ResponseEntity<String> helloWorld(@PathVariable String nome){
-        return new ResponseEntity<String>("Hello " + nome + "! Agora são "+ /*+ _horario.getHorario() +*/ ". ImplementadoSevice: " + helloService.getHorario() , HttpStatus.OK);
+        return new ResponseEntity<String>("Hello " + nome + "! Agora são "+ */
+/*+ _horario.getHorario() +*//*
+ ". ImplementadoSevice: " + helloService.getHorario() , HttpStatus.OK);
     }
 
 
 
 }
+*/
