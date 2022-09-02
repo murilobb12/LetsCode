@@ -16,7 +16,11 @@ public interface ProdutosService {
 
     boolean removerProduto(long id);
 
-    Produtos listarProduto(long id);
+    Produtos listarProdutoNamed(long id);
+    
+    Produtos listarProdutoJPQL(long id);
+    
+    Produtos listarProdutoJPA(long id);
 
 
 

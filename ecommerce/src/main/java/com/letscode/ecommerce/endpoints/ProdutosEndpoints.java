@@ -59,9 +59,21 @@ public class ProdutosEndpoints {
         }
     }
 
-    @RequestMapping(path = "/produtos/{id}", method = RequestMethod.GET)
-    public ResponseEntity listarProduto(@PathVariable long id){
-        Produtos produtos = produtosService.listarProduto(id);
+    @RequestMapping(path = "/produtos_named/{id}", method = RequestMethod.GET)
+    public ResponseEntity listarProdutoNamed(@PathVariable long id){
+        Produtos produtos = produtosService.listarProdutoNamed(id);
+
+        return ResponseEntity.ok(produtos);
+    }
+    @RequestMapping(path = "/produtos_jpql/{id}", method = RequestMethod.GET)
+    public ResponseEntity listarProdutoJPQL(@PathVariable long id){
+        Produtos produtos = produtosService.listarProdutoJPQL(id);
+
+        return ResponseEntity.ok(produtos);
+    }
+    @RequestMapping(path = "/produtos_jpa/{id}", method = RequestMethod.GET)
+    public ResponseEntity listarProdutoJPA(@PathVariable long id){
+        Produtos produtos = produtosService.listarProdutoJPA(id);
 
         return ResponseEntity.ok(produtos);
     }

@@ -49,7 +49,17 @@ public class ProdutosServiceImpl implements ProdutosService {
     }
 
     @Override
-    public Produtos listarProduto(long id) {
+    public Produtos listarProdutoNamed(long id) {
         return produtosDao.findAllById(id);
+    }
+
+    @Override
+    public Produtos listarProdutoJPQL(long id) {
+        return produtosDao.findProductByID(id);
+    }
+
+    @Override
+    public Produtos listarProdutoJPA(long id) {
+        return produtosDao.findByProductId(id);
     }
 }

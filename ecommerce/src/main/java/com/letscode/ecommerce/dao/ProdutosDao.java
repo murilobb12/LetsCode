@@ -12,14 +12,16 @@ public interface ProdutosDao extends JpaRepository<Produtos, Long> {
 
     //Named Methods
     Produtos findAllById(long id);
-//
-//    //Jpa Native Query
-//    @Query(value = "SELECT * FROM Produtos WHERE id = userId", nativeQuery = true)
-//    Produtos findByProductId(long userId);
-
+    
     //JPQL
-//    @Query("SELECT * FROM Produtos WHERE id = :id")
-//    Produtos findProductByID(@Param("id") long id);
+    @Query("SELECT p FROM Produtos p WHERE p.id = :p")
+    Produtos findProductByID(@Param("p") long id);
+    
+    
+//     //Jpa Native Query
+   @Query(value = "SELECT * FROM Produtos WHERE id = :userId", nativeQuery = true)
+   Produtos findByProductId(long userId);
+   
 
 
 
