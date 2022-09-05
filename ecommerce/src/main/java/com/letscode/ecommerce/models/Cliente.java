@@ -1,5 +1,7 @@
 package com.letscode.ecommerce.models;
 
+import lombok.RequiredArgsConstructor;
+
 import javax.persistence.*;
 
 //Declarando que vai representar uma tabela no banco de dados
