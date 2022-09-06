@@ -3,6 +3,7 @@ package com.letscode.ecommerce.endpoints;
 import com.letscode.ecommerce.models.Produtos;
 import com.letscode.ecommerce.restClient.FinanceiroRestClient;
 import com.letscode.ecommerce.services.ProdutosService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,8 @@ public class ProdutosEndpoints {
     @Autowired
     ProdutosService produtosService;
 
-    //Endpoint para acessar todos os produtos
+
+    @Operation(description = "Endpoint para acessar todos os produtos")
     @RequestMapping(path = "/produtos", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Produtos>> getAllProducts(){
         List<Produtos> produtosList = produtosService.listarProdutos();
@@ -27,7 +29,7 @@ public class ProdutosEndpoints {
         return ResponseEntity.ok(produtosList);
     }
 
-    //Endpoint para criar um produto
+    @Operation(description = "Endpoint para criar um produto")
     @RequestMapping(path = "/produtos", method = RequestMethod.POST)
     public ResponseEntity criarProduto(@RequestBody Produtos _produtos){
         boolean sucesso = produtosService.novoProduto(_produtos);
@@ -39,7 +41,7 @@ public class ProdutosEndpoints {
         }
     }
 
-    //Endpoint para alterar um produto
+    @Operation(description = "Endpoint para alterar um produto")
     @RequestMapping(path = "/produtos", method = RequestMethod.PUT)
     public ResponseEntity atualizarProduto(@RequestBody Produtos produtos){
         boolean sucesso = produtosService.atualizarProduto(produtos);
@@ -52,7 +54,7 @@ public class ProdutosEndpoints {
     }
 
 
-    //Endpoint para deletar um produto através do ID
+    @Operation(description = "Endpoint para deletar um produto através do ID")
     @RequestMapping(path = "/produtos/{id}", method = RequestMethod.DELETE)
     public ResponseEntity removerProduto(@PathVariable long id){
         boolean sucesso = produtosService.removerProduto(id);
@@ -64,7 +66,7 @@ public class ProdutosEndpoints {
         }
     }
 
-    //Endpoint para listar um produto usando Named Methods
+    @Operation(description = "Endpoint para listar um produto usando Named Methods")
     @RequestMapping(path = "/produtos_named/{id}", method = RequestMethod.GET)
     public ResponseEntity listarProdutoNamed(@PathVariable long id){
         Produtos produtos = produtosService.listarProdutoNamed(id);
@@ -72,7 +74,7 @@ public class ProdutosEndpoints {
         return ResponseEntity.ok(produtos);
     }
 
-    //Endpoint para listar um produto usando JPQL
+    @Operation(description = "Endpoint para listar um produto usando JPQL")
     @RequestMapping(path = "/produtos_jpql/{id}", method = RequestMethod.GET)
     public ResponseEntity listarProdutoJPQL(@PathVariable long id){
         Produtos produtos = produtosService.listarProdutoJPQL(id);
@@ -80,7 +82,7 @@ public class ProdutosEndpoints {
         return ResponseEntity.ok(produtos);
     }
 
-    //Endpoint para listar um produto usando JPA
+    @Operation(description = "Endpoint para listar um produto usando JPA")
     @RequestMapping(path = "/produtos_jpa/{id}", method = RequestMethod.GET)
     public ResponseEntity listarProdutoJPA(@PathVariable long id){
         Produtos produtos = produtosService.listarProdutoJPA(id);
