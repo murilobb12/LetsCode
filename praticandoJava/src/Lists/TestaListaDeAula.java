@@ -1,4 +1,4 @@
-package Listas;
+package Lists;
 
 public class TestaListaDeAula {
 }
