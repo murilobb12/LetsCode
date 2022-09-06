@@ -1,2 +1,4 @@
-package Listas;public class TestaListaDeAula {
+package Listas;
+
+public class TestaListaDeAula {
 }

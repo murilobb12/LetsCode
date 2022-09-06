@@ -1,29 +1,39 @@
 package Listas;
 
-public class Aula {
+public class Nomes /*implements Comparable<Nomes>*/{
 
-    private String titulo;
-    private int tempo;
+    private String nome;
+    private int idade;
 
-    public Aula(String titulo, int tempo) {
-        this.titulo = titulo;
-        this.tempo = tempo;
+    public Nomes(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
     }
 
 
-    public String getTitulo() {
-        return titulo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitulo(String nome) {
+        this.nome = nome;
     }
 
-    public int getTempo() {
-        return tempo;
+    public int getIdade() {
+        return idade;
     }
 
-    public void setTempo(int tempo) {
-        this.tempo = tempo;
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
+
+    @Override
+    public String toString() {
+        return
+                "{nome='" + nome + '\'' +
+                ", idade=" + idade +
+                '}';
+    }
+
+
 }
