@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LetsCode.iml" filepath="$PROJECT_DIR$/LetsCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LetsCode10/LetsCode10.iml" filepath="$PROJECT_DIR$/../LetsCode10/LetsCode10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ecommerce-store/ecommerce-store.iml" filepath="$PROJECT_DIR$/ecommerce-store/ecommerce-store.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ecommerce-store-quarkus/ecommerce-store-quarkus.iml" filepath="$PROJECT_DIR$/ecommerce-store-quarkus/ecommerce-store-quarkus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/src/main/main.iml" filepath="$PROJECT_DIR$/hello/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloex/src/main/main1.iml" filepath="$PROJECT_DIR$/helloex/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parking-control/src/main/main2.iml" filepath="$PROJECT_DIR$/parking-control/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ecommerce/src/main/main3.iml" filepath="$PROJECT_DIR$/ecommerce/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/praticandoJava/praticandoJava.iml" filepath="$PROJECT_DIR$/praticandoJava/praticandoJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ecommerce/src/test/test.iml" filepath="$PROJECT_DIR$/ecommerce/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloex/src/test/test1.iml" filepath="$PROJECT_DIR$/helloex/src/test/test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/src/test/test2.iml" filepath="$PROJECT_DIR$/hello/src/test/test2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parking-control/src/test/test3.iml" filepath="$PROJECT_DIR$/parking-control/src/test/test3.iml" />
+    </modules>
+  </component>
+</project>
