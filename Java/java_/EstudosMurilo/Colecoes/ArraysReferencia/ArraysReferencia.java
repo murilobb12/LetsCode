@@ -1,6 +1,6 @@
 package java_.EstudosMurilo.Colecoes.ArraysReferencia;
 
-import aulas.Julho.Conta;
+import java_.EstudosMurilo.Colecoes.Contas.ContaCorrente;
 
 public class ArraysReferencia {
 

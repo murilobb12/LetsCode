@@ -5,6 +5,7 @@ import java.util.Arrays.*;
 
 import static java.util.Arrays.stream;
 
+//Arrays não são muito utilizados no java moderno, devido a sua complexidade de implementar as suas funcções
 public class Arrays {
 
     public static void main(String[] args) {
