@@ -49,10 +49,25 @@ class Curso {
 
     private String nome;
     private int alunos;
+    private int tempo;
+
+    public int getTempo() {
+        return tempo;
+    }
+
+    public void setTempo(int tempo) {
+        this.tempo = tempo;
+    }
 
     public Curso(String nome, int alunos) {
         this.nome = nome;
         this.alunos = alunos;
+    }
+
+    public Curso(String nome, int alunos, int tempo) {
+        this.nome = nome;
+        this.alunos = alunos;
+        this.tempo = tempo;
     }
 
     public String getNome() {

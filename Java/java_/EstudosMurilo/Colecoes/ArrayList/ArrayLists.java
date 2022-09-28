@@ -3,6 +3,7 @@ package java_.EstudosMurilo.Colecoes.ArrayList;
 import java_.EstudosMurilo.Colecoes.Contas.ContaCorrente;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -29,6 +30,14 @@ public class ArrayLists {
         boolean existe = listaContas.contains(cc2);
 
         System.out.println("A conta existe? " + existe);
+
+
+        List<String> stringList = new ArrayList<>();
+
+        stringList.add("Teste");
+        stringList.add("Teste");
+        stringList.add("Teste");
+
 
     }
 

@@ -18,8 +18,9 @@ public class HashSets {
         Collection<ContaCorrente> collection = new HashSet<>();
 
         ContaCorrente cc1 = new ContaCorrente(1521,23413);
+        ContaCorrente cc2 = new ContaCorrente(1521, 23413);
         collection.add(cc1);
-        collection.add(cc1);
+        collection.add(cc2);
 
         System.out.println(collection);
 
