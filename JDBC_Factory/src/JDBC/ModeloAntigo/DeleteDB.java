@@ -1,9 +1,8 @@
-package JDBC;
+package JDBC.ModeloAntigo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DeleteDB {
 
@@ -14,7 +13,7 @@ public class DeleteDB {
         Connection connection = connectionFactory.recuperaconexao();
 
         //Criando um statement para podermos trabalhar as queries
-        PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM PRODUTO WHERE ID > 3");
+        PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM PRODUTO WHERE ID > 1");
 
         //Passando a query para o statement
         preparedStatement.execute();

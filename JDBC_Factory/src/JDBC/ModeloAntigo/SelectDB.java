@@ -1,4 +1,4 @@
-package JDBC;
+package JDBC.ModeloAntigo;
 
 import java.sql.*;
 
@@ -6,6 +6,8 @@ public class SelectDB {
 
 
     public static void main(String[] args) throws SQLException {
+
+        int parametro = 10;
 
 
 
@@ -17,9 +19,10 @@ public class SelectDB {
         Connection connection = connectionFactory.recuperaconexao();
 
         //Criando o statement para poder passarmos a query
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM PRODUTO WHERE ID > 0");
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM PRODUTO WHERE ID > ?");
 
         //Executando o statement
+        preparedStatement.setString(1, String.valueOf(parametro));
         preparedStatement.execute();
 
         //Fazendo com que o statment retorne o que achou para um Set

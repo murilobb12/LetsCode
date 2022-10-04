@@ -1,4 +1,4 @@
-package JDBC;
+package JDBC.ModeloAntigo;
 
 import java.sql.*;
 

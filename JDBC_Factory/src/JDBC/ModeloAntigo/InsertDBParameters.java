@@ -1,4 +1,4 @@
-package JDBC;
+package JDBC.ModeloAntigo;
 
 import java.sql.*;
 
@@ -6,14 +6,17 @@ public class InsertDBParameters {
 
     public static void main(String[] args) throws SQLException {
 
-        String nome = "Teclado";
-        String descricao = "Teclado Razer sem fio";
-
-
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaconexao();
 
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO PRODUTO(nome, descricao) VALUES(?,?)", Statement.RETURN_GENERATED_KEYS);
+
+        adicionarProduto("Notebook", "Notebook Dell Inpsiron 14'", preparedStatement);
+        adicionarProduto("Placa de Vídeo", "Placa de Vídeo NVIDA GFORCE GTX 970", preparedStatement);
+    }
+
+    private static void adicionarProduto(String nome, String descricao,  PreparedStatement preparedStatement) throws SQLException {
+
         preparedStatement.setString(1, nome);
         preparedStatement.setString(2, descricao);
 
@@ -26,7 +29,7 @@ public class InsertDBParameters {
             System.out.println("Id gerado: " + id);
         }
 
-        connection.close();
+        generatedKeys.close();
     }
 
 
