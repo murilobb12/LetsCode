@@ -7,19 +7,19 @@ public enum Desempenho {
     A{
         @Override
         public BigDecimal percentualReajuste(){
-            return new BigDecimal("0.03");
+            return new BigDecimal("1.03");
         }
     },
     B {
         @Override
         public BigDecimal percentualReajuste() {
-            return new BigDecimal("0.15");
+            return new BigDecimal("1.15");
         }
     },
     C {
         @Override
         public BigDecimal percentualReajuste() {
-            return new BigDecimal("0.2");
+            return new BigDecimal("1.2");
         }
     };
 

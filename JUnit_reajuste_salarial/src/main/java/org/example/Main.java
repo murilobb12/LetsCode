@@ -12,7 +12,7 @@ public class Main {
         System.out.println(murilo);
 
         System.out.println("Realizando reajuste salarial conforme o desempenho.");
-        reajusteService.reajusteSalarial(murilo);
+        murilo.setSalario(reajusteService.reajusteSalarial(murilo));
 
         System.out.println("Novo salário conforme o reajuste.");
         System.out.println(murilo);
