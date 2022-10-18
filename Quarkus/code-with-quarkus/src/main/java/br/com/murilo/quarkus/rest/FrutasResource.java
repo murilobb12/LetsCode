@@ -24,7 +24,6 @@ public class FrutasResource {
         return frutaService.listFrutas();
     }
 
-
     @POST
     public void inserirFruta(){
         frutaService.insertFrutas();

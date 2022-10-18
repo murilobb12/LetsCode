@@ -26,7 +26,6 @@ public class BebidaResource {
 
     @POST
     public void insereBebida(){
-
         bebidaService.insertBebidas();
     }
 }
