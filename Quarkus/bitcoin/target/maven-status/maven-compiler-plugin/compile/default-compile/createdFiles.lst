@@ -1,1 +1,4 @@
+br\com\murilo\service\BitcoinService.class
 br\com\murilo\GreetingResource.class
+br\com\murilo\resource\BitcoinResource.class
+br\com\murilo\model\Bitcoin.class
