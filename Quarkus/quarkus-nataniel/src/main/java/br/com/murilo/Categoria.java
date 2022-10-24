@@ -4,6 +4,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @RequestScoped
@@ -11,6 +12,7 @@ import java.util.List;
 public class Categoria extends PanacheEntity {
 
 
+    @NotEmpty
     private String nome;
 
     private int quantidade;
@@ -31,9 +33,13 @@ public class Categoria extends PanacheEntity {
         this.quantidade = quantidade;
     }
 
-    public List<Categoria> listarCategorias(){
-        return listAll();
-    }
+//    public List<Categoria> listarCategorias(){
+//        return listAll();
+//    }
+
+//    public Categoria listarCategoriaId(Categoria categoria){
+//        return findById(categoria.id);
+//    }
 
 
 }

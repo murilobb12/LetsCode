@@ -1,28 +1,44 @@
 package br.com.murilo.resource;
 
 import br.com.murilo.model.Bitcoin;
-import br.com.murilo.service.BitcoinService;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
+import br.com.murilo.model.TipoEnum;
+import br.com.murilo.repository.BitcoinRepository;
+
 
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.transaction.Transactional;
+import javax.validation.Valid;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.time.LocalDate;
 import java.util.List;
 
 @Path("/bitcoins")
 public class BitcoinResource {
 
     @Inject
-    @RestClient
-    BitcoinService bitcoinService;
+    BitcoinRepository bitcoinRepository;
+
+    @Inject
+    Bitcoin bitcoin;
 
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String listar(){
-        return bitcoinService.listarOperacoesBitcoin();
+    public List<Bitcoin> listar(){
+        return bitcoinRepository.listAll();
+    }
+
+    @Transactional
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Bitcoin salvarBitcoin(@Valid Bitcoin bitcoin){
+
+        bitcoin.persist();
+
+        return bitcoin;
+
     }
 
 

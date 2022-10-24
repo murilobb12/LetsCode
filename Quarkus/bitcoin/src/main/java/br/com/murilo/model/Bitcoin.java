@@ -1,16 +1,25 @@
 package br.com.murilo.model;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
+import javax.enterprise.context.RequestScoped;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-public class Bitcoin {
 
+@RequestScoped
+@Entity
+public class Bitcoin extends PanacheEntity {
 
-    private Long id;
+    @NotNull
+    private Double preco;
 
-    private double preco;
+    @NotNull
+    private TipoEnum tipo;
 
-    private String tipo;
-
+    @NotNull
     private LocalDate data;
 
     public Long getId() {
@@ -29,11 +38,11 @@ public class Bitcoin {
         this.preco = preco;
     }
 
-    public String getTipo() {
+    public TipoEnum getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoEnum tipo) {
         this.tipo = tipo;
     }
 
