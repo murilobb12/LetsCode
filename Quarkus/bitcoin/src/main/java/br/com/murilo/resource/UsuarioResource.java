@@ -2,8 +2,9 @@ package br.com.murilo.resource;
 
 
 import br.com.murilo.model.Usuario;
-import br.com.murilo.repository.UsuarioRepository;
+import br.com.murilo.service.UsuarioService;
 
+import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
@@ -14,46 +15,33 @@ import java.util.List;
 @Path("/usuarios")
 public class UsuarioResource {
 
-    @Inject
-    UsuarioRepository usuarioRepository;
 
+    @Inject
+    UsuarioService usuarioService;
+
+
+    @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Transactional
     @POST
     public Usuario inserirUsuario(Usuario usuario){
 
-        usuario.persist();
+        usuarioService.adicionar(usuario);
 
         return usuario;
 
     }
 
+    @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @GET
-    public List<Usuario> listarUsuario(){
+    public List<Usuario> listar(){
 
-        return usuarioRepository.listAll();
+        return usuarioService.listar();
 
     };
-
-    @Path("/id")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Transactional
-    @DELETE
-    public void deletarUsuarioId(Usuario usuario){
-
-        usuarioRepository.deleteById(usuario.getId());
-
-
-
-    }
-
-
-
-
 
 
 

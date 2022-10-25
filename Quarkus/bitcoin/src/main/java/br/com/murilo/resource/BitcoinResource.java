@@ -10,7 +10,6 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.time.LocalDate;
 import java.util.List;
 
 @Path("/bitcoins")
@@ -25,7 +24,7 @@ public class BitcoinResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Bitcoin> listar(){
+    public List<Bitcoin> listar() {
         return bitcoinRepository.listAll();
     }
 
@@ -33,7 +32,7 @@ public class BitcoinResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Bitcoin salvarBitcoin(@Valid Bitcoin bitcoin){
+    public Bitcoin salvarBitcoin(@Valid Bitcoin bitcoin) {
 
         bitcoin.persist();
 

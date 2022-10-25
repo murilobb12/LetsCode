@@ -51,4 +51,29 @@ public class Ordem extends PanacheEntityBase {
     public void setUserId(Long userId) {
         this.userId = userId;
     }
+
+    public Long getId() {
+
+        return id;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public TipoEnum getTipo() {
+        return tipo;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
 }
