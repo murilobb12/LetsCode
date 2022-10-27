@@ -1,15 +1,17 @@
 package br.com.murilo.model;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class Conta extends PanacheEntity {
+public class Conta extends PanacheEntityBase {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "numero_conta")
     private int numeroConta;
@@ -18,6 +20,14 @@ public class Conta extends PanacheEntity {
 
     @Column(name = "cliente_id")
     private Long clienteId;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getClienteId() {
         return clienteId;

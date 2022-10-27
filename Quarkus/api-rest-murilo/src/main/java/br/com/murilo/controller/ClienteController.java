@@ -31,7 +31,6 @@ public class ClienteController {
 
     @GET
     @Path("{id}")
-
     public Response ClientById(@PathParam("id")Long id){
 
         Cliente cliente = clienteService.clienteById(id);

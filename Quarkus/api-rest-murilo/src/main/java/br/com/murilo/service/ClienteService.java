@@ -26,7 +26,7 @@ public class ClienteService {
         Optional<Cliente> byIdOptional = Cliente.findByIdOptional(id);
 
         if (byIdOptional.isEmpty()){
-            throw new NullPointerException("ID informado não existe na nossa base.");
+            throw new NullPointerException("ID informado não existe na nossa base!");
         }
 
         return clienteRepository.findById(id);
@@ -57,7 +57,7 @@ public class ClienteService {
         Optional<Cliente> byIdOptional = Cliente.findByIdOptional(id);
 
         if (byIdOptional.isEmpty()){
-            throw new NullPointerException("ID informado não existe na nossa base.");
+            throw new NullPointerException("ID informado nao existe na nossa base.");
         }
 
         cliente = byIdOptional.get();
