@@ -1,22 +1,27 @@
 package br.com.murilo.model;
 
+
 import lombok.Data;
 
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.*;
 
-@RequestScoped
 @Entity
 @Data
-@Table(name = "USERS")
-public class User{
+@RequestScoped
+@Table(name = "FOLLOWERS")
+public class Follower {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "age")
-    private Integer age;
-    @Column(name = "name")
-    private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "follower_id")
+    private User follower;
 
 }
