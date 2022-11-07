@@ -41,4 +41,7 @@ public class FuncionarioResource {
 
     }
 
+//    @PUT
+//    public Response atualizarFuncionariuos
+
 }

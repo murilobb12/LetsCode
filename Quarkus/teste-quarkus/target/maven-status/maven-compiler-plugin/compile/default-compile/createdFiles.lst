@@ -1,3 +1,4 @@
+br\com\murilo\dto\DepartamentoListDto.class
 br\com\murilo\rest\BitcoinResource.class
 br\com\murilo\service\BitcoinService.class
 br\com\murilo\model\Funcionario.class
