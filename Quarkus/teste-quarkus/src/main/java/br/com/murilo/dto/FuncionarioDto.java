@@ -10,13 +10,12 @@ import javax.validation.constraints.NotNull;
 @Data
 public class FuncionarioDto {
 
-
     @NotBlank
     private String nome;
     @NotNull
     private Integer idade;
-
-    private Departamento departamentoId;
+    @NotNull
+    private Long departamentoId;
 
 
 }

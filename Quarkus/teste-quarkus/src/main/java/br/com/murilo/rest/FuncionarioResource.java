@@ -29,7 +29,7 @@ public class FuncionarioResource {
     @GET
     public Response listarFuncionarios(){
 
-        return Response.status(Response.Status.OK).entity(funcionarioService.listarFuncionarios()).entity("Teste").build();
+        return Response.status(Response.Status.OK).entity(funcionarioService.listarFuncionarios()).build();
 
     }
 
