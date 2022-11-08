@@ -1,13 +1,9 @@
 package br.com.murilo.rest;
 
 import br.com.murilo.dto.FuncionarioDto;
-import br.com.murilo.model.Funcionario;
-import br.com.murilo.repository.FuncionarioRepository;
 import br.com.murilo.service.FuncionarioService;
-import org.hibernate.validator.internal.metadata.aggregated.MetaDataBuilder;
 
 import javax.inject.Inject;
-import javax.print.attribute.standard.Media;
 import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -47,7 +43,7 @@ public class FuncionarioResource {
 
     @Path("/{id}")
     @PUT
-    public Response atualizarFuncionario(@PathParam("id")Long id, FuncionarioDto funcionarioDto){
+    public Response atualizarFuncionario(@PathParam("id")Long id,@Valid FuncionarioDto funcionarioDto){
         return Response.status(Response.Status.NO_CONTENT.getStatusCode()).entity(funcionarioService.atualizarFuncionario(id, funcionarioDto)).build();
     }
 

@@ -6,17 +6,14 @@ import br.com.murilo.model.Funcionario;
 import br.com.murilo.repository.DepartamentoRepository;
 import br.com.murilo.repository.FuncionarioRepository;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
-import io.quarkus.panache.common.Parameters;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.NotFoundException;
-import java.security.Policy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class FuncionarioService {

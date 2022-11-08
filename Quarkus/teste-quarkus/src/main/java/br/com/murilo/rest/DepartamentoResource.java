@@ -12,7 +12,9 @@ import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Path("/departamentos")
@@ -27,30 +29,31 @@ public class DepartamentoResource {
 
     @GET
     public Response listarDep(){
-        Log.error("Lista Retornada " + LocalDateTime.now());
-
-        return Response.status(Response.Status.OK.getStatusCode()).entity(departamentoService.listarDep()).build();
+        Log.info("Lista de Departamentos Retornada " + LocalDateTime.now());
+        return  Response.status(Response.Status.OK.getStatusCode()).entity(departamentoService.listarDep()).build();
     }
 
     @Path("/list")
     @Transactional
     @POST
     public Response salvarDepList(@Valid List<DepartamentoDto> departamentoDto){
+        Log.info("Lista de Departamentos Salva " + LocalDateTime.now());
         return Response.status(Response.Status.CREATED.getStatusCode()).entity(departamentoService.salvarDepList(departamentoDto)).build();
     }
 
     @Transactional
     @POST
     public Response salvarDep(@Valid DepartamentoDto departamentoDto){
+        Log.info("Departamento Salvo " + LocalDateTime.now());
         return Response.status(Response.Status.CREATED.getStatusCode()).entity(departamentoService.salvarDep(departamentoDto)).build();
     }
 
     @Path("/{id}")
     @GET
     public Response listarDepById(@PathParam("id")Long id){
+        Log.info(Response.status(Response.Status.OK.getStatusCode()));
         return Response.status(Response.Status.OK.getStatusCode()).entity(departamentoService.listDepById(id)).build();
     }
-
 
     @Transactional
     @Path("{id}")
