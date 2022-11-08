@@ -3,15 +3,11 @@ package br.com.murilo.service;
 import br.com.murilo.dto.DepartamentoDto;
 import br.com.murilo.model.Departamento;
 import br.com.murilo.repository.DepartamentoRepository;
-import io.quarkus.logging.Log;
-import org.jboss.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
 import java.security.InvalidParameterException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +27,7 @@ public class DepartamentoService {
     }
 
 
-    public List<Departamento> salvarDep(List<DepartamentoDto> departamentoDto) {
+    public List<Departamento> salvarDepList(List<DepartamentoDto> departamentoDto) {
 
         List<Departamento> departamentoList = new ArrayList<>();
 
@@ -76,6 +72,17 @@ public class DepartamentoService {
         Departamento departamento = depByIdOptional.orElseThrow(NotFoundException::new);
 
         departamentoRepository.delete(departamento);
+
+    }
+
+    public DepartamentoDto salvarDep(DepartamentoDto departamentoDto) {
+        Departamento departamento = new Departamento();
+
+        departamento.setNome(departamentoDto.getNome());
+
+        departamentoRepository.persist(departamento);
+
+        return departamentoDto;
 
     }
 }
