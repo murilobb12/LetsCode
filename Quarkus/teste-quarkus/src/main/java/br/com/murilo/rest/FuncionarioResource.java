@@ -57,5 +57,10 @@ public class FuncionarioResource {
         return Response.status(Response.Status.NO_CONTENT.getStatusCode()).entity(funcionarioService.deletarFuncionarioByID(id)).build();
     }
 
+    @Path("/departamentos/{id}")
+    @GET
+    public Response funcionarioDepartamentoID(@PathParam("id")Long id){
+        return Response.status(Response.Status.OK.getStatusCode()).entity(funcionarioService.listarFuncionariosDepartamentoById(id)).build();
+    }
 
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Entity
+@Entity(name = "Funcionario")
 @Table(name = "Funcionario")
 @Data
 public class Funcionario {
@@ -24,6 +24,8 @@ public class Funcionario {
     @ManyToOne
     @JoinColumn(name = "dep_id", referencedColumnName = "id")
     private Departamento departamentoId;
+
+
 
 
 }
