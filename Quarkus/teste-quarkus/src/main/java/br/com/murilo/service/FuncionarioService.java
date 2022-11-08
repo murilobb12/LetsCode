@@ -107,10 +107,9 @@ public class FuncionarioService {
 
 
         PanacheQuery<Funcionario> funcionarioPanacheQuery = funcionarioRepository.find("dep_id", departamento.getId());
-        List<Funcionario> collect = funcionarioPanacheQuery.list();
 
 
-        return collect;
+        return funcionarioPanacheQuery.list();
 
 
     }

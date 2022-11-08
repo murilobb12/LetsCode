@@ -25,8 +25,6 @@ public class DepartamentoService {
         return departamentoRepository.listAll();
 
     }
-
-
     public List<Departamento> salvarDepList(List<DepartamentoDto> departamentoDto) {
 
         List<Departamento> departamentoList = new ArrayList<>();
@@ -42,6 +40,8 @@ public class DepartamentoService {
         return departamentoList;
 
     }
+
+
 
     public Optional<Departamento> listDepById(Long id) {
 

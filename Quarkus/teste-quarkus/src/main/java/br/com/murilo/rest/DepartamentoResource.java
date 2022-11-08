@@ -1,10 +1,8 @@
 package br.com.murilo.rest;
 
 import br.com.murilo.dto.DepartamentoDto;
-import br.com.murilo.model.Departamento;
 import br.com.murilo.service.DepartamentoService;
 import io.quarkus.logging.Log;
-import io.quarkus.security.Authenticated;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -12,9 +10,7 @@ import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 @Path("/departamentos")

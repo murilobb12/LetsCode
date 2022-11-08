@@ -16,7 +16,7 @@ public interface BitcoinService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Bitcoin> listar();
+    List<Bitcoin> listar();
 
 
 }
