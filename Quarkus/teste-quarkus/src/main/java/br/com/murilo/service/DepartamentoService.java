@@ -24,7 +24,7 @@ public class DepartamentoService {
     DepartamentoRepository departamentoRepository;
 
 
-    public List<Departamento> listarDep(){
+    public List<Departamento> listarDep() {
 
         return departamentoRepository.listAll();
 
@@ -47,12 +47,12 @@ public class DepartamentoService {
 
     }
 
-    public Optional<Departamento> listDepById(Long id){
+    public Optional<Departamento> listDepById(Long id) {
 
         Optional<Departamento> depByIdOptional = departamentoRepository.findByIdOptional(id);
 
-        if (depByIdOptional.isPresent()){
-        return depByIdOptional;
+        if (depByIdOptional.isPresent()) {
+            return depByIdOptional;
         }
         throw new InvalidParameterException("ID não encontrado na nossa base");
     }

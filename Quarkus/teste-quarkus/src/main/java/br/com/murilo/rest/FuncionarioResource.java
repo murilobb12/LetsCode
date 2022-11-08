@@ -21,27 +21,41 @@ import java.util.List;
 public class FuncionarioResource {
 
     @Inject
-    FuncionarioRepository funcionarioRepository;
-
-    @Inject
     FuncionarioService funcionarioService;
 
     @GET
     public Response listarFuncionarios(){
-
         return Response.status(Response.Status.OK).entity(funcionarioService.listarFuncionarios()).build();
-
     }
 
+    @Path("/list")
+    @POST
+    public Response salvarListFuncionarios(@Valid List<FuncionarioDto> dto){
+        return Response.status(Response.Status.CREATED.getStatusCode()).entity(funcionarioService.salvarListFuncionario(dto)).build();
+    }
 
     @POST
     public Response salvarFuncionarios(@Valid FuncionarioDto dto){
-
         return Response.status(Response.Status.CREATED.getStatusCode()).entity(funcionarioService.salvarFuncionario(dto)).build();
-
     }
 
-//    @PUT
-//    public Response atualizarFuncionariuos
+    @Path("/{id}")
+    @GET
+    public Response listarFuncionariosById(@PathParam("id") Long id){
+        return Response.status(Response.Status.OK.getStatusCode()).entity(funcionarioService.listarFuncionariosById(id)).build();
+    }
+
+    @Path("/{id}")
+    @PUT
+    public Response atualizarFuncionario(@PathParam("id")Long id, FuncionarioDto funcionarioDto){
+        return Response.status(Response.Status.NO_CONTENT.getStatusCode()).entity(funcionarioService.atualizarFuncionario(id, funcionarioDto)).build();
+    }
+
+    @Path("{id}")
+    @DELETE
+    public Response deletarFuncionarioById(@PathParam("id")Long id){
+        return Response.status(Response.Status.NO_CONTENT.getStatusCode()).entity(funcionarioService.deletarFuncionarioByID(id)).build();
+    }
+
 
 }
