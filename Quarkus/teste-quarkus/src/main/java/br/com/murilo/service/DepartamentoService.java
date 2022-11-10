@@ -1,8 +1,12 @@
 package br.com.murilo.service;
 
 import br.com.murilo.dto.DepartamentoDto;
+import br.com.murilo.dto.FuncionarioPorDepartamentoResponse;
 import br.com.murilo.model.Departamento;
+import br.com.murilo.model.Funcionario;
 import br.com.murilo.repository.DepartamentoRepository;
+import br.com.murilo.repository.FuncionarioRepository;
+import io.quarkus.hibernate.orm.panache.PanacheQuery;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -18,6 +22,9 @@ public class DepartamentoService {
 
     @Inject
     DepartamentoRepository departamentoRepository;
+
+    @Inject
+    FuncionarioRepository funcionarioRepository;
 
 
     public List<Departamento> listarDep() {
@@ -85,4 +92,24 @@ public class DepartamentoService {
         return departamentoDto;
 
     }
+
+    public FuncionarioPorDepartamentoResponse funcionariosPorDepartamento(Long id){
+
+        Optional<Departamento> byIdOptional = departamentoRepository.findByIdOptional(id);
+        Departamento departamento = byIdOptional.orElseThrow(NotFoundException::new);
+
+        PanacheQuery<Funcionario> dep_id = funcionarioRepository.find("dep_id", departamento.getId());
+
+        int quantidadeFuncionarios = dep_id.list().size();
+
+        FuncionarioPorDepartamentoResponse funcionarioPorDepartamentoResponse = new FuncionarioPorDepartamentoResponse();
+
+        funcionarioPorDepartamentoResponse.setNomeDepartamento(departamento.getNome());
+        funcionarioPorDepartamentoResponse.setCount(quantidadeFuncionarios);
+
+        return funcionarioPorDepartamentoResponse;
+
+    }
+
+
 }

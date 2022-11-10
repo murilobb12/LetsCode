@@ -1,6 +1,8 @@
 package br.com.murilo.service;
 
 import br.com.murilo.dto.FuncionarioDto;
+import br.com.murilo.dto.FuncionarioIdadeNomeResponse;
+import br.com.murilo.dto.FuncionarioPorDepartamentoResponse;
 import br.com.murilo.model.Departamento;
 import br.com.murilo.model.Funcionario;
 import br.com.murilo.repository.DepartamentoRepository;
@@ -9,6 +11,7 @@ import io.quarkus.hibernate.orm.panache.PanacheQuery;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import javax.ws.rs.NotFoundException;
 import java.util.ArrayList;
@@ -24,6 +27,34 @@ public class FuncionarioService {
     @Inject
     FuncionarioRepository funcionarioRepository;
 
+    public List<Funcionario> listarFuncionariosNamed(){
+
+
+        return funcionarioRepository.listarFuncionario();
+
+    }
+
+    public List<FuncionarioIdadeNomeResponse> tratarListaFuncionarios(List<Funcionario> funcionarioList){
+
+        List<FuncionarioIdadeNomeResponse> listFuncionariosTratada = new ArrayList<>();
+
+        System.out.println(funcionarioList.size());
+
+
+        for (int i = 0; i < funcionarioList.size(); i++) {
+            listFuncionariosTratada.add(new FuncionarioIdadeNomeResponse());
+            listFuncionariosTratada.get(i).setIdade(funcionarioList.get(i).getIdade());
+            listFuncionariosTratada.get(i).setNome(funcionarioList.get(i).getNome());
+
+        }
+        return listFuncionariosTratada;
+
+    }
+
+//    public List<FuncionarioIdadeNomeResponse> listarFuncionariosTratados(){
+//
+//
+//    }
 
     public List<Funcionario> listarFuncionarios() {
         return funcionarioRepository.listAll();

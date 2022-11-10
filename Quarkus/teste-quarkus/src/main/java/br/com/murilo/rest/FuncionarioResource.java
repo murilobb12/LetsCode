@@ -13,7 +13,7 @@ import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("funcionarios")
+    @Path("funcionarios")
 public class FuncionarioResource {
 
     @Inject
@@ -22,6 +22,18 @@ public class FuncionarioResource {
     @GET
     public Response listarFuncionarios(){
         return Response.status(Response.Status.OK).entity(funcionarioService.listarFuncionarios()).build();
+    }
+
+    @GET
+    @Path("/named")
+    public Response listarFuncionariosNamed(){
+        return Response.status(Response.Status.OK).entity(funcionarioService.listarFuncionariosNamed()).build();
+    }
+
+    @GET
+    @Path("/tratados")
+    public Response listarFuncionariosTratados(){
+        return Response.status(Response.Status.OK).entity(funcionarioService.tratarListaFuncionarios(funcionarioService.listarFuncionarios())).build();
     }
 
     @Path("/list")
