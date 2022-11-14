@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@NamedNativeQuery(name = "teste", query = "SELECT a.id, a.nome, a.idade, a.dep_id FROM Funcionario a")
 @Entity(name = "Funcionario")
 @Table(name = "Funcionario")
 @Data
