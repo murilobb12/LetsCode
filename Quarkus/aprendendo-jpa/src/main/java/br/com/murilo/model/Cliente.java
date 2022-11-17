@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@NamedQuery(name =  "Cliente.findByName", query = "SELECT c FROM Cliente c WHERE c.id > 1")
+@NamedQuery(name =  "Cliente.findByName", query = "SELECT c FROM Cliente c WHERE c.nome = 'Murilo'")
 @Table(name = "Cliente")
 public class Cliente {
 

@@ -80,14 +80,15 @@ public class ClienteService {
     @Inject
     EntityManager em;
 
-    public List<Cliente> FindByName(){
+    public Object FindByName(){
 //        Query namedQuery = em.createNamedQuery("Cliente.findByName");
 //        List resultList = namedQuery.getResultList();
 
         Query nativeQuery = em.createNativeQuery("Cliente.findByName2");
-        List resultList = nativeQuery.getResultList();
 
-        return resultList;
+        Object singleResult = nativeQuery.getSingleResult();
+
+        return singleResult;
     }
 
 
