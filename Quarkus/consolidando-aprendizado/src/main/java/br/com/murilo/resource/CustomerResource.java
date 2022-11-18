@@ -10,7 +10,6 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
 import java.util.List;
 
 @Path("/customers")
@@ -33,13 +32,6 @@ public class CustomerResource {
     public Response updateUser(){
         return Response.status(Response.Status.OK.getStatusCode()).build();
     }
-
-    @GET
-    public Response update(){
-        return Response.status(Response.Status.OK.getStatusCode()).build();
-    }
-
-
 
     @POST
     @Transactional
