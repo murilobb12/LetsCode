@@ -33,6 +33,7 @@ public class CustomerResource {
         return Response.status(Response.Status.OK.getStatusCode()).build();
     }
 
+
     @POST
     @Transactional
     public Response addCustomer(Customer customer){
