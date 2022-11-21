@@ -1,5 +1,6 @@
 package br.com.murilo.rest;
 
+import br.com.murilo.model.Cliente;
 import br.com.murilo.repository.ClienteRepository;
 import br.com.murilo.service.ClienteService;
 import io.quarkus.arc.runtime.test.PreloadedTestApplicationClassPredicate;
@@ -7,11 +8,9 @@ import io.quarkus.arc.runtime.test.PreloadedTestApplicationClassPredicate;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("/clientes")
 public class ClienteResource {
@@ -40,12 +39,26 @@ public class ClienteResource {
         return Response.status(Response.Status.OK.getStatusCode()).entity(clienteRepository.clienteListById(id)).build();
     }
 
-    @Path("/named/id")
+    @Path("/named/{id}")
     @DELETE
     @Transactional
-    public Response deletarClienteId(){
-        clienteRepository.clienteDeleteById();
-        return Response.status(Response.Status.OK.getStatusCode()).build();
+    public Response deletarClienteId(@PathParam("id")Long id){
+        return Response.status(Response.Status.OK.getStatusCode()).entity(clienteService.deletarCliente(id)).build();
+    }
+
+    @PUT
+    @Transactional
+    @Path("{id}")
+    public Response atualizarCliente(Cliente cliente, @PathParam("id") Long id){
+
+        return Response.status(Response.Status.OK.getStatusCode()).entity(clienteService.atualizarCliente(cliente,id)).build();
+
+    }
+
+    @POST
+    @Transactional
+    public Response inserirCliente(List<Cliente> cliente){
+        return Response.status(Response.Status.OK.getStatusCode()).entity(clienteService.inserirCliente(cliente)).build();
     }
 
 }

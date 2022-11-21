@@ -21,7 +21,16 @@ public class ClienteService {
        return clienteRepository.clienteListNamed();
     }
 
+    public int atualizarCliente(Cliente cliente, Long id){
+        return clienteRepository.atualizarCliente(cliente,id);
+    }
+
+    public int inserirCliente(List<Cliente> cliente){
+        return clienteRepository.inserirCliente(cliente);
+    }
 
 
-
+    public int deletarCliente(Long id) {
+        return clienteRepository.clienteDeleteById(id);
+    }
 }

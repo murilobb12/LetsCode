@@ -7,7 +7,9 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.NotFoundException;
+import java.lang.reflect.Parameter;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -40,15 +42,42 @@ public class ClienteRepository implements PanacheRepository<Cliente> {
 
     }
 
-    public void clienteDeleteById(){
+    public int clienteDeleteById(Long id){
 
-        Query deletar_usuario_id = getEntityManager().createNamedQuery("DELETAR_USUARIO_ID").setParameter(1, 2);
+        Query deletar_usuario_id = getEntityManager().createNamedQuery("DELETAR_USUARIO_ID").setParameter(1, id);
 
-        deletar_usuario_id.executeUpdate();
+        return deletar_usuario_id.executeUpdate();
 
 
     }
 
 
+    public int  atualizarCliente(Cliente cliente, Long id) {
 
+        Query atualizar_usuario = getEntityManager().createNamedQuery("ATUALIZAR_USUARIO").setParameter(1, cliente.getNome()).setParameter(2, cliente.getIdade()).setParameter(3, id);
+
+        return atualizar_usuario.executeUpdate();
+
+    }
+
+    public int inserirCliente(List<Cliente> cliente){
+
+        List<Cliente> clientes = new ArrayList<>();
+
+        int i1 = 0;
+
+        for (int i = 0; i < cliente.size(); i++) {
+            clientes.add(new Cliente());
+            Query query = getEntityManager().createNamedQuery("INSERIR_USUARIO")
+                    .setParameter(1, cliente.get(i).getNome())
+                    .setParameter(2, cliente.get(i).getIdade());
+
+            System.out.println(i1);
+
+            i1 = query.executeUpdate();
+        }
+
+        return i1;
+
+    }
 }
