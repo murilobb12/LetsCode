@@ -7,12 +7,10 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.NotFoundException;
-import java.lang.reflect.Parameter;
-import java.lang.reflect.Type;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class ClienteRepository implements PanacheRepository<Cliente> {
