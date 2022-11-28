@@ -1,33 +1,19 @@
 package org.example;
 
-import sun.util.locale.LocaleUtils;
-
-import static java.lang.Character.isDigit;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(romeu_julieta(1));
+        RomeuJulieta romeuJulieta = new RomeuJulieta();
 
-    }
+        System.out.println(romeuJulieta.romeu_julieta(Integer.parseInt("Teste")));
+ //        System.out.println(romeuJulieta.romeu_julieta(0));
 
-    public static int romeu_julieta(int valor){
+//        for (int i = 0; i <= 100; i++) {
+//            System.out.println(i + " - " +  romeuJulieta.romeu_julieta(i));
+//        }
 
-            if (Integer.)
-        }
-            return 0;
-
-    }
-
-    public static boolean tratarEntrada(Object valor) {
-
-        String nome = "Murilo";
-
-        boolean murilo = nome.equals("Murilo");
-
-        return murilo;
-l
     }
 
 }
