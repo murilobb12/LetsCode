@@ -6,4 +6,6 @@ public interface Lancamento {
 
     void sacar(BigDecimal valor);
 
+    void depositar(BigDecimal valor);
+
 }

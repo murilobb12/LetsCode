@@ -23,6 +23,8 @@ public class Main {
 
         System.out.println("Sacado o valor.");
         cC.sacar(new BigDecimal("50"));
+        System.out.println("Depositando o valor");
+        cC.depositar(new BigDecimal("5"));
         System.out.println(cC);
 
 

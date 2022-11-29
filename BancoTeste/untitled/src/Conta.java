@@ -48,7 +48,12 @@ public class Conta implements Lancamento{
 
     @Override
     public void sacar(BigDecimal valor){
-        this.saldo = (this.saldo.subtract(valor));
+        this.saldo = this.saldo.subtract(valor);
 
+    }
+
+    @Override
+    public void depositar(BigDecimal valor){
+        this.saldo = this.saldo.add(valor);
     }
 }
