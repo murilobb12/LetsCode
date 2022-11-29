@@ -5,43 +5,57 @@ import org.junit.jupiter.api.Test;
 
 public class RomeuJulietaTest {
 
+    RomeuJulieta romeuJulieta = new RomeuJulieta();
+
+
     @Test
-    public void passando3RetornaQueijo() {
-        RomeuJulieta romeuJulieta = new RomeuJulieta();
-        String resposta = romeuJulieta.romeu_julieta(3);
+    public void pasando3RetornaQueijoTeste() {
+        String retorno = romeuJulieta.romeu_julieta(3);
 
-        Assertions.assertEquals("QUEIJO", resposta);
-
+        Assertions.assertEquals("Queijo", retorno);
     }
 
     @Test
-    public void passando5RetornaGoiabada() {
-        RomeuJulieta romeuJulieta = new RomeuJulieta();
-        String resposta = romeuJulieta.romeu_julieta(5);
+    public void passando5RetornaGoiabadaTest() {
+        String retorno = romeuJulieta.romeu_julieta(5);
 
-        Assertions.assertEquals("GOIABADA", resposta);
-
+        Assertions.assertEquals("Goiabada", retorno);
     }
 
+    @Test
+    public void passando30RetornaRomeuJulietaTest() {
+        String retorno = romeuJulieta.romeu_julieta(30);
+
+        Assertions.assertEquals("Romeu e Julieta", retorno);
+    }
 
     @Test
-    public void passandoValorDiferenteDeInteiroErro() {
+    public void passando1Retorna1Test() {
+        String retorno = romeuJulieta.romeu_julieta(1);
 
-        Assertions.assertThrows(NumberFormatException.class, () -> {
-            RomeuJulieta romeuJulieta = new RomeuJulieta();
+        Assertions.assertEquals("1", retorno);
+    }
+
+    @Test
+    public void passando13Retorna13Test() {
+        String retorno = romeuJulieta.romeu_julieta(13);
+
+        Assertions.assertEquals("13", retorno);
+    }
+
+    @Test
+    public void passando0RetornaErro() {
+        Assertions.assertThrows(Exception.class, () -> {
+            romeuJulieta.romeu_julieta(0);
+        });
+    }
+
+    @Test
+    public void passandoStringRetornaErro() {
+        Assertions.assertThrows(Exception.class, () -> {
             romeuJulieta.romeu_julieta(Integer.parseInt("Teste"));
         });
-
-
     }
 
-    @Test
-    public void passandoValorNegativoErro() {
-        Assertions.assertThrows(Exception.class, () -> {
-            RomeuJulieta romeuJulieta = new RomeuJulieta();
-            romeuJulieta.romeu_julieta(-12);
-        });
-
-    }
 
 }

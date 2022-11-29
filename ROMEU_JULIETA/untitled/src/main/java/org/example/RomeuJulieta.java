@@ -4,31 +4,30 @@ import java.security.InvalidParameterException;
 
 public class RomeuJulieta {
 
-    public String romeu_julieta(int valor){
+    final String queijo = "Queijo";
+    final String goiabada = "Goiabada";
+    final String romeuEJulieta = "Romeu e Julieta";
+
+    public String romeu_julieta(int valor) {
 
         if (valor <= 0){
-            throw new NumberFormatException("Valor menor ou igual a zero");
+            throw new NumberFormatException("Valor menor ou igual a zero.");
         }
 
-        System.out.println("Teste");
-        String resposta = String.valueOf(valor);
+        boolean div_tres = valor % 3 == 0;
+        boolean div_cinco = valor % 5 == 0;
+        boolean div_quinze = valor % 15 == 0;
 
-
-//        try{
-//              = Integer.parseInt(resposta);
-//        }catch (NumberFormatException ex){
-//            System.out.println("Entrada inválida");
-//        }
-
-        if ((Integer.parseInt(resposta) % 3 == 0) && !(Integer.parseInt(resposta) % 5 == 0)){
-            return "QUEIJO";
-
-        } else if ((Integer.parseInt(resposta) % 5 == 0) && !(Integer.parseInt(resposta) % 3 == 0)) {
-            return "GOIABADA";
-        } else if ((Integer.parseInt(resposta) % 5 == 0) && (Integer.parseInt(resposta) % 3 == 0)){
-            return "ROMEU E JULIETA";
+        if (div_tres && !div_cinco) {
+            return queijo;
+        } else if (div_cinco && !div_tres) {
+            return goiabada;
+        } else if (div_quinze) {
+            return romeuEJulieta;
         }
-        return resposta;
+
+        return String.valueOf(valor);
+
     }
 
 
