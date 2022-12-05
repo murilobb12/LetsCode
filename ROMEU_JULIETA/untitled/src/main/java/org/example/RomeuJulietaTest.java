@@ -1,9 +1,10 @@
-import org.example.Main;
-import org.example.RomeuJulieta;
+package org.example;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RomeuJulietaTest {
+
 
     RomeuJulieta romeuJulieta = new RomeuJulieta();
 
