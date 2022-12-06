@@ -13,13 +13,16 @@ import java.util.Optional;
 @ApplicationScoped
 public class ClienteRepository implements PanacheRepository<Cliente> {
 
-    private static NotFoundException get() {
-        return new NotFoundException("Id não encontrado");
-    }
+
 
     public List<Cliente> listarClientes(){
         TypedQuery<Cliente> listar_usuarios = getEntityManager().createNamedQuery("LISTAR_USUARIOS", Cliente.class);
         return listar_usuarios.getResultList();
+    }
+
+    public int atualizarCliente(Cliente cliente){
+        Query query = getEntityManager().createQuery("SELECT * FROM CLIENTE");
+        return query.executeUpdate();
     }
 
     public int inserirCliente(Cliente cliente){
