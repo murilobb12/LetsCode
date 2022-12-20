@@ -1,0 +1,105 @@
+https://www.baeldung.com/java-httpclient-basic-auth
+
+https://www.baeldung.com/httpclient-basic-authentication
+
+https://stackoverflow.com/questions/3283234/http-basic-authentication-in-java-using-httpclient
+
+
+https://reqbin.com/req/java/c-haxm0xgr/curl-basic-auth-example
+
+https://docs.oracle.com/cd/E19575-01/819-3669/bncbo/index.html
+
+
+package bndes;
+
+import io.quarkus.logging.Log;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.*;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.ByteBuffer;
+import java.util.concurrent.Flow;
+
+public class HttpUrlConnectionBndes {
+
+    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
+//
+//        HttpClient client = HttpClient.newBuilder()
+//                .authenticator(new Authenticator() {
+//                    @Override
+//                    protected PasswordAuthentication getPasswordAuthentication() {
+//                        return new PasswordAuthentication("postman", "password".toCharArray());
+//                    }
+//                })
+//                .build();
+//
+//        HttpRequest request = HttpRequest.newBuilder()
+//                .GET()
+//                .uri(new URI("https://postman-echo.com/basic-auth"))
+//                .build();
+//
+//
+//        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+//
+//
+//
+//        System.out.println(response.statusCode());
+//    }
+
+//        URL url = new URL("https://apis-gateway-h.bndes.gov.br/token");
+//        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+//
+////        conn.setRequestProperty("grant_type","client_credentials");
+////        conn.setRequestProperty("scope","fg2_read fg2_write");
+////        conn.setRequestProperty("Authorization","Basic cWVVV3JxMGZrNWVtU2FxakgwSTlUVXFzQ3dzYTpPeGlnRlYyMUZpb1ZvMEJlMENnbXBVU01nY1Vh");
+////        conn.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+//        conn.setRequestMethod("POST");
+//        conn.header
+//
+//        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+//        String output;
+//
+//        StringBuffer response = new StringBuffer();
+//        while((output = in.readLine()) != null){
+//            response.append(output);
+//        }
+//
+//        in.close();
+//
+//        System.out.println("Response: -" + response.toString());
+//
+//    }
+
+
+        HttpClient client = HttpClient.newHttpClient();
+
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI("http://localhost:8080/users"))
+                .header("Content-Type","application/json")
+                .POST(HttpRequest.BodyPublishers.ofString("{\n" +
+                        "\t\"nome\":\"Murilo Santos\", \n" +
+                        "\t\"sexo\": \"MASCULINO\"\n" +
+                        "}"))
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
+
+
+
+
+
+
+    }
+
+
+
+
+
+}

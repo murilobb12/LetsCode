@@ -35,6 +35,7 @@ public class OrdemResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
     public Ordem inserirOrdem(@Context SecurityContext securityContext, Ordem ordem){
+        System.out.println(ordem.getTipo().ordinal());
         ordemService.inserirOrdem(securityContext, ordem);
 
         return ordem;
