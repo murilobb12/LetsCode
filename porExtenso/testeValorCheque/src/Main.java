@@ -14,8 +14,5 @@ public class Main {
 
         System.out.println(cheque.extenso(valor));
 
-
-
-
     }
 }

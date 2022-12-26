@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class TratarCheque {
 
     //Definindo um Map para fazer o De/Para do valor -> por extenso
-    HashMap<Integer, String> palavras = new HashMap<>() {
+    HashMap<Integer, String> numeros = new HashMap<>() {
         {
             put(0, "");
             put(1, "um");
@@ -52,15 +52,15 @@ public class TratarCheque {
         Double valorAteCem = valor % 100;
 
         if (valorAteCem <= 20) {
-            return palavras.get(valorAteCem.intValue());
+            return numeros.get(valorAteCem.intValue());
         } else if (valorAteCem % 10 == 0) {
 
-            return palavras.get(valorAteCem.intValue());
+            return numeros.get(valorAteCem.intValue());
         } else {
             Double parteUni = valorAteCem % 10;
             Double parteDez = valorAteCem - parteUni;
 
-            return palavras.get(parteDez.intValue()) + " e " + palavras.get(parteUni.intValue());
+            return numeros.get(parteDez.intValue()) + " e " + numeros.get(parteUni.intValue());
         }
     }
 
@@ -74,11 +74,11 @@ public class TratarCheque {
             if (valor == 100) {
                 return "cem";
             } else if (valor % 100 == 0) {
-                return palavras.get(parteCentena.intValue());
+                return numeros.get(parteCentena.intValue());
             }
-            return palavras.get(parteCentena.intValue()) + " e ";
+            return numeros.get(parteCentena.intValue()) + " e ";
         }
-        return palavras.get(parteCentena.intValue());
+        return numeros.get(parteCentena.intValue());
     }
 
     //Separar os centavos da parte inteira

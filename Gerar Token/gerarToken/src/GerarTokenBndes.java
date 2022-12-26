@@ -4,7 +4,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class ConversorCurl2 {
+public class GerarTokenBndes {
+
+
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
@@ -20,9 +22,6 @@ public class ConversorCurl2 {
 
         int posInicial = responseBody.indexOf(":") + 2;
         int posFinal = responseBody.indexOf(":", 16) - 9;
-
-        System.out.println(responseBody.indexOf(":"));
-        System.out.println(responseBody.indexOf(":" , 16));
 
         String bearerToken = "Bearer " + responseBody.substring(posInicial, posFinal);
         System.out.println(bearerToken);
