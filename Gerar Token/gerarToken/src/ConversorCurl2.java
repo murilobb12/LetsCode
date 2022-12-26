@@ -1,5 +1,3 @@
-import jdk.jfr.ContentType;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -7,7 +5,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ConversorCurl2 {
-
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
@@ -29,9 +26,5 @@ public class ConversorCurl2 {
 
         String bearerToken = "Bearer " + responseBody.substring(posInicial, posFinal);
         System.out.println(bearerToken);
-
-
     }
-
-
 }
