@@ -49,36 +49,36 @@ public class TratarCheque {
     //Separar o valor passado até 100
     public String separadorAteCem(double valor) {
 
-        Double valorAteCem = valor % 100;
+        double valorAteCem = valor % 100;
 
         if (valorAteCem <= 20) {
-            return numeros.get(valorAteCem.intValue());
+            return numeros.get((int) valorAteCem);
         } else if (valorAteCem % 10 == 0) {
 
-            return numeros.get(valorAteCem.intValue());
+            return numeros.get((int) valorAteCem);
         } else {
-            Double parteUni = valorAteCem % 10;
-            Double parteDez = valorAteCem - parteUni;
+            double parteUni = valorAteCem % 10;
+            double parteDez = valorAteCem - parteUni;
 
-            return numeros.get(parteDez.intValue()) + " e " + numeros.get(parteUni.intValue());
+            return numeros.get((int) parteDez) + " e " + numeros.get((int) parteUni);
         }
     }
 
     //Separar o valor passado de 100 até 999
     public String separadorCentena(double valor) {
-        Double parteDezena = valor % 100;
-        Double parteCentena = valor - parteDezena;
+        double parteDezena = valor % 100;
+        double parteCentena = valor - parteDezena;
 
         if (valor >= 100) {
 
             if (valor == 100) {
                 return "cem";
             } else if (valor % 100 == 0) {
-                return numeros.get(parteCentena.intValue());
+                return numeros.get((int) parteCentena);
             }
-            return numeros.get(parteCentena.intValue()) + " e ";
+            return numeros.get((int) parteCentena) + " e ";
         }
-        return numeros.get(parteCentena.intValue());
+        return numeros.get((int) parteCentena);
     }
 
     //Separar os centavos da parte inteira
