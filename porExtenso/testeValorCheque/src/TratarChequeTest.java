@@ -105,6 +105,27 @@ public class TratarChequeTest {
     }
 
     @Test
+    public void passandoVinteReaisEVinteCentavosTest(){
+        String retorno = cheque.extenso(20.20);
+
+        Assert.assertEquals("vinte reais e vinte centavos", retorno);
+    }
+
+    @Test
+    public void passandoDezenoveReaisESetentaCentavosTest(){
+        String retorno = cheque.extenso(19.70);
+
+        Assert.assertEquals("dezenove reais e setenta centavos", retorno);
+    }
+
+    @Test
+    public void passandoCinquentaReaisEUmCentavoTest(){
+        String retorno = cheque.extenso(50.01);
+
+        Assert.assertEquals("cinquenta reais e um centavo", retorno);
+    }
+
+    @Test
     public void passandoVinteReaisTest(){
         String retorno = cheque.extenso(20.00);
 

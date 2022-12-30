@@ -51,18 +51,27 @@ public class TratarCheque {
 
         double valorAteCem = valor % 100;
 
+        double parteUni =  (valorAteCem % 10);
+        double parteDez = Math.round(valorAteCem - parteUni);
+
+
+
         if (valorAteCem <= 20) {
             return numeros.get((int) valorAteCem);
         } else if (valorAteCem % 10 == 0) {
 
             return numeros.get((int) valorAteCem);
+        } else if (parteDez % 10 == 0 && Math.round(parteUni) == 0) {
+            return numeros.get((int) parteDez);
         } else {
-            double parteUni = valorAteCem % 10;
-            double parteDez = valorAteCem - parteUni;
-
             return numeros.get((int) parteDez) + " e " + numeros.get((int) parteUni);
+
+
         }
+
+        //Colocar if para tratar parte unidade
     }
+
 
     //Separar o valor passado de 100 até 999
     public String separadorCentena(double valor) {
@@ -120,7 +129,6 @@ public class TratarCheque {
             return separadorCentena(valor) + separadorAteCem(valor) + " reais e " + separadorCentavos(valor);
         } else {
             return separadorCentena(valor) + separadorAteCem(valor) + " reais" + separadorCentavos(valor);
-
         }
 
     }

@@ -52,7 +52,7 @@ public class ClienteRepository implements PanacheRepository<Cliente> {
 
     public int  atualizarCliente(Cliente cliente, Long id) {
 
-        Query atualizar_usuario = getEntityManager().createNamedQuery("ATUALIZAR_USUARIO").setParameter(1, cliente.getNome()).setParameter(2, cliente.getIdade()).setParameter(3, id);
+        Query atualizar_usuario = getEntityManager().createNamedQuery("ATUALIZAR_USUARIO").setParameter(1, cliente.getNome()).setParameter(2, id);
 
         return atualizar_usuario.executeUpdate();
 
