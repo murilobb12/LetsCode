@@ -1,10 +1,12 @@
+package br.com.murilo.service;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class GerarTokenBndes {
+public class GerarToken {
 
     public String gerarToken() throws IOException, InterruptedException {
 
