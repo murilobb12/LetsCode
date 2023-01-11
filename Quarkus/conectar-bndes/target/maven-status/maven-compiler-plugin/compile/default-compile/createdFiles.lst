@@ -1,5 +1,4 @@
 br\com\murilo\rest\BndesResource.class
-br\com\murilo\model\SolicitacaoRetorno.class
 br\com\murilo\model\SolicitacaoServico.class
 META-INF\panache-archive.marker
 br\com\murilo\service\GerarToken.class

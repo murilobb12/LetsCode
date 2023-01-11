@@ -1,73 +1,13 @@
+-Documentação Loja API
+https://www.bndes.gov.br/wps/portal/site/home/financiamento/garantias/peac/documentos-para-desenvolvedores
 
-Nome do host:                              BBTMF-84T00L3
-Nome do sistema operacional:               Microsoft Windows 10 Enterprise
-Versão do sistema operacional:             10.0.19044 N/A compilação 19044
-Fabricante do sistema operacional:         Microsoft Corporation
-Configuração do SO:                        Estação de trabalho autônoma
-Tipo de compilação do sistema operacional: Multiprocessor Free
-Proprietário registrado:                   N/A
-Organização registrada:                    N/A
-Identificação do produto:                  00330-80000-00000-AA764
-Data da instalação original:               07/03/2022, 18:47:35
-Tempo de Inicialização do Sistema:         09/11/2022, 10:03:00
-Fabricante do sistema:                     Dell Inc.
-Modelo do sistema:                         Latitude 3420
-Tipo de sistema:                           x64-based PC
-Processador(es):                           1 processador(es) instalado(s).
-                                           [01]: Intel64 Family 6 Model 140 Stepping 1 GenuineIntel ~1382 Mhz
-Versão do BIOS:                            Dell Inc. 1.21.0, 12/08/2022
-Pasta do Windows:                          C:\Windows
-Pasta do sistema:                          C:\Windows\system32
-Inicializar dispositivo:                   \Device\HarddiskVolume1
-Localidade do sistema:                     pt-br;Português (Brasil)
-Localidade de entrada:                     pt-br;Português (Brasil)
-Fuso horário:                              (UTC-03:00) Brasília
-Memória física total:                      16.119 MB
-Memória física disponível:                 3.143 MB
-Memória Virtual: Tamanho Máximo:           24.311 MB
-Memória Virtual: Disponível:               6.193 MB
-Memória Virtual: Em Uso:                   18.118 MB
-Local(is) de arquivo de paginação:         C:\pagefile.sys
-Domínio:                                   WORKGROUP
-Servidor de Logon:                         \\BBTMF-84T00L3
-Hotfix(es):                                19 hotfix(es) instalado(s).
-                                           [01]: KB5017022
-                                           [02]: KB4534170
-                                           [03]: KB4537759
-                                           [04]: KB4545706
-                                           [05]: KB4562830
-                                           [06]: KB4598481
-                                           [07]: KB5000736
-                                           [08]: KB5003791
-                                           [09]: KB5005716
-                                           [10]: KB5012170
-                                           [11]: KB5018410
-                                           [12]: KB5011352
-                                           [13]: KB5011651
-                                           [14]: KB5014032
-                                           [15]: KB5014035
-                                           [16]: KB5014671
-                                           [17]: KB5015895
-                                           [18]: KB5016705
-                                           [19]: KB5005699
-Placa(s) de Rede:                          5 NIC(s) instalado(s).
-                                           [01]: Intel(R) Wi-Fi 6 AX201 160MHz
-                                                 Nome da conexão: Wi-Fi
-                                                 Status:          Mídia desconectada
-                                           [02]: Realtek PCIe GbE Family Controller
-                                                 Nome da conexão: Ethernet
-                                                 DHCP ativado:    Sim
-                                                 Servidor DHCP:   172.18.51.1
-                                                 Endereço(es) IP
-                                                 [01]: 172.18.110.115
-                                                 [02]: fe80::8850:4e51:c7e7:26e4
-                                           [03]: Bluetooth Device (Personal Area Network)
-                                                 Nome da conexão: Conexão de Rede Bluetooth
-                                                 Status:          Mídia desconectada
-                                           [04]: Check Point Virtual Network Adapter For Endpoint VPN Client
-                                                 Nome da conexão: Ethernet 2
-                                                 Status:          Mídia desconectada
-                                           [05]: Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64
-                                                 Nome da conexão: Ethernet 3
-                                                 Status:          Hardware ausente
-Requisitos do Hyper-V:                     Hipervisor detectado. Recursos necessários para o Hyper-V não serão exibidos.
+-Documentação Integração API
+https://www.bndes.gov.br/wps/wcm/connect/site/da95babc-5865-4092-8abd-892dd5c58403/Documentacao_da_API_PEAC-1.2.11-SNAPSHOT.html?MOD=AJPERES&CVID=oaSP7ra#_limitecontratacaodto
+
+
+-Documentação BNDES 
+https://www.bndes.gov.br/sbn/BNDES_online/
+
+
+
+

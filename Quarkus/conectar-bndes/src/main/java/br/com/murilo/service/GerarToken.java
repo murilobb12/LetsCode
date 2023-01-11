@@ -1,11 +1,13 @@
 package br.com.murilo.service;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+@ApplicationScoped
 public class GerarToken {
 
     public String gerarToken() throws IOException, InterruptedException {

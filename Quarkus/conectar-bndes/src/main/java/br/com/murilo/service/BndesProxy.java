@@ -13,8 +13,8 @@ public interface BndesProxy {
 
 
     @GET
-    @Path("solicitacoes/76780")
-    SolicitacaoRetorno solicitacaoRetorno(@HeaderParam("Authorization")String token);
+    @Path("solicitacoes/{id}")
+    SolicitacaoRetorno solicitacaoRetorno(@HeaderParam("Authorization")String token, @PathParam("id")Long id);
 
     @GET
     @Path("solicitacoes/76780")

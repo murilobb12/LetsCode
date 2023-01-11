@@ -9,6 +9,9 @@
         <module name="conectar-bndes" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="conectar-bndes" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
