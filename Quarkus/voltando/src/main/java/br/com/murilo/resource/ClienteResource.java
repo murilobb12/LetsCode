@@ -39,6 +39,7 @@ public class ClienteResource {
     @POST
     @Transactional
     public Response inserirCliente(Cliente cliente) {
+        System.out.println(cliente.getNome());
         return Response.status(Response.Status.OK.getStatusCode()).entity(clienteService.inserirCliente(cliente)).build();
     }
 

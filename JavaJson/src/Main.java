@@ -17,15 +17,6 @@ public class Main {
         System.out.println(my_obj);
         System.out.println(my_obj.get("titulo"));
 
-//        String titulo = my_obj.get(1);
-
-
-
-
-
-
-
-
 
 
 
