@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class Entrada {
 
-    public List<Cliente> clientes;
+    public Cliente[] clientes;
 
 
 }

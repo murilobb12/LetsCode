@@ -1,4 +1,4 @@
-br\com\rest\ClienteResource.class
-br\com\GreetingResource.class
 br\com\model\Cliente.class
 br\com\model\Entrada.class
+br\com\rest\ClienteResource.class
+br\com\GreetingResource.class

@@ -21,9 +21,7 @@ public class Main {
         cliente.setFilhos(filhos);
         clientes.add(cliente);
 
-        entrada.setClientes(clientes);
-
-
+        System.out.println(clientes);
 
 
         System.out.println(entrada);
