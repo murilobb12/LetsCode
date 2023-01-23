@@ -1,7 +1,6 @@
 package br.com.murilo.resource;
 
 import br.com.murilo.model.bndes.EntradaLoteSolicitacoesHonraDTO;
-import br.com.murilo.model.bndes.SolicitacaoHonraEnvioDTO;
 import br.com.murilo.restClient.BndesProxy;
 import br.com.murilo.token.GerarToken;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
@@ -69,21 +68,14 @@ public class BndesResource {
 
     @GET
     @Path("teste")
-    public Response teste(EntradaLoteSolicitacoesHonraDTO loteSolicitacoesHonraDTO){
-        entradaLoteSolicitacoesHonraDTO = loteSolicitacoesHonraDTO;
+    public Response teste(EntradaLoteSolicitacoesHonraDTO loteSolicitacoesHonraDTO) {
 
-        entradaLoteSolicitacoesHonraDTO.setSolicitacoesHonra(new SolicitacaoHonraEnvioDTO[]{});
-
-        System.out.println(entradaLoteSolicitacoesHonraDTO);
-
-
-
+        System.out.println(loteSolicitacoesHonraDTO);
 
         return Response.status(Response.Status.OK.getStatusCode()).build();
+
+
     }
-
-
-
 
 
 }

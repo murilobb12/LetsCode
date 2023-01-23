@@ -11,7 +11,6 @@ import javax.ws.rs.*;
 @RegisterRestClient(configKey = "api-bndes")
 public interface BndesProxy {
 
-
     @GET
     @Path("operacao/credito-livre/{idOperacaoAgente}")
     public SolicitacaoHonraConsultaDTO listarSolicitacaoAgente(@HeaderParam("Authorization") String token, @PathParam("idOperacaoAgente") Long idOperacaoAgente);
@@ -22,6 +21,5 @@ public interface BndesProxy {
 
     @POST
     public SolicitacaoRetorno inserirSolicitacao(@HeaderParam("Authorization") String token, EntradaLoteSolicitacoesHonraDTO entradaLoteSolicitacoesHonraDTO);
-
 
 }

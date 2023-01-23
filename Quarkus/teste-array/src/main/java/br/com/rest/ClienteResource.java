@@ -29,11 +29,14 @@ public class ClienteResource {
     @POST
     public Response inserirCliente(Entrada jsonEntrada) {
 
-        entrada.setClientes(jsonEntrada.clientes);
+        System.out.println(jsonEntrada.clientes[1]);
 
-        System.out.println(entrada);
+//        entrada.setClientes(jsonEntrada.clientes);
 
-        return Response.status(Response.Status.OK.getStatusCode()).entity(entrada).build();
+
+//        System.out.println(entrada);
+
+        return Response.status(Response.Status.OK.getStatusCode()).entity(jsonEntrada).build();
 
 
     }
@@ -49,7 +52,6 @@ public class ClienteResource {
 //        cliente.setFilhos(jsonEntrada.getFilhos());
 
         return Response.status(Response.Status.OK.getStatusCode()).build();
-
 
     }
 
