@@ -31,11 +31,6 @@ public class ClienteResource {
 
         System.out.println(jsonEntrada.clientes[1]);
 
-//        entrada.setClientes(jsonEntrada.clientes);
-
-
-//        System.out.println(entrada);
-
         return Response.status(Response.Status.OK.getStatusCode()).entity(jsonEntrada).build();
 
 

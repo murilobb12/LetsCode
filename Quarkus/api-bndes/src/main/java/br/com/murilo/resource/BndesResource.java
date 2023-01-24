@@ -12,9 +12,20 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
+
+
+import org.jboss.logging.Logger;
 
 @Path("bndes")
 public class BndesResource {
+
+    private static final Logger LOG = Logger.getLogger(BndesResource.class);
 
     @Inject
     @RestClient
@@ -32,7 +43,23 @@ public class BndesResource {
     }
 
 
+    public static String teste() throws  InterruptedException {
+
+
+        for (int i = 5160; i >= 1; i--) {
+
+            Thread.sleep(1000);
+            LOG.info(i);
+
+        }
+
+
+        return "Acabou, Adeus. Bye Bye!";
+    }
+
+
     /**
+     *
      * Consultar resultado de um protocolo de solicitações de honra.
      * Essa consulta é através o id da solicitação gerado
      */
@@ -58,10 +85,13 @@ public class BndesResource {
      */
     @POST
     @Path("solicitacoes")
-    public Response inserirSolicitacoes(EntradaLoteSolicitacoesHonraDTO loteSolicitacoesHonraDTO) throws IOException, InterruptedException {
-        System.out.println("inicio");
-        System.out.println(loteSolicitacoesHonraDTO);
-        System.out.println("fim");
+    public Response inserirSolicitacoes(EntradaLoteSolicitacoesHonraDTO loteSolicitacoesHonraDTO) throws IOException, InterruptedException, ParseException {
+        LOG.info(loteSolicitacoesHonraDTO);
+        LOG.error("FATALERROR!");
+        LOG.error(teste());
+//        System.out.println("inicio");
+//        System.out.println(loteSolicitacoesHonraDTO);
+//        System.out.println("fim");
 
         return Response.status(Response.Status.OK.getStatusCode()).entity(bndesProxy.inserirSolicitacao(token.gerarToken(), loteSolicitacoesHonraDTO)).build();
     }
@@ -70,12 +100,10 @@ public class BndesResource {
     @Path("teste")
     public Response teste(EntradaLoteSolicitacoesHonraDTO loteSolicitacoesHonraDTO) {
 
-        System.out.println(loteSolicitacoesHonraDTO);
+
 
         return Response.status(Response.Status.OK.getStatusCode()).build();
 
-
     }
-
 
 }

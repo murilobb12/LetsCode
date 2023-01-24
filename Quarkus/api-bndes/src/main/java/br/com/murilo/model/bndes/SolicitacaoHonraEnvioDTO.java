@@ -17,6 +17,8 @@ public class SolicitacaoHonraEnvioDTO {
 
     public Double valorSaldoDeJurosNaNormalidade;
 
+    public String teste;
+
     public Double valorSaldoDevedorDePrincipal;
 
     public AmortizacaoEnvioDTO[] amortizacoesAteADataDaSolicitacaoDeHonra;

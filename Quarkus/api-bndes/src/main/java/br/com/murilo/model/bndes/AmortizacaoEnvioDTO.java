@@ -1,5 +1,8 @@
 package br.com.murilo.model.bndes;
 
+import lombok.Data;
+
+@Data
 public class AmortizacaoEnvioDTO {
 
     public String dataVencimento;
