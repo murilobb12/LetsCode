@@ -2,8 +2,6 @@ package br.com.murilo.model.bndes;
 
 import lombok.Data;
 
-import javax.ws.rs.GET;
-
 @Data
 public class SolicitacaoHonraEnvioDTO {
 
