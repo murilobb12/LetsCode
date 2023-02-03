@@ -1,8 +1,10 @@
 package br.com.murilo.resource;
 
+import br.com.murilo.model.Episodes;
 import br.com.murilo.model.TvSerie;
 import br.com.murilo.proxy.TvMazeProxy;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.jboss.logging.Logger;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -11,7 +13,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,11 +23,11 @@ import java.util.Set;
 @Path("/tvseries")
 public class TvMazeResource {
 
+    private static final Logger LOG = Logger.getLogger(TvMazeResource.class);
 
     private List<TvSerie> tvSerie = new ArrayList();
 
-    private Set<String> genres = new HashSet<>();
-
+    private Set<Episodes> genres = new HashSet<>();
 
 
     @Inject
@@ -38,6 +39,7 @@ public class TvMazeResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getSeries() throws MalformedURLException {
+        LOG.info("Get TV Shows");
         insertGenres();
         insertShow();
         return Response.status(Response.Status.OK).entity(tvSerie).build();
@@ -51,9 +53,9 @@ public class TvMazeResource {
     }
 
     public void insertGenres(){
-        genres.add("Ação");
-        genres.add("Drama");
-        genres.add("Romance");
+
+        genres.add(new Episodes("Ação"));
+
     }
 
     public void insertShow() throws MalformedURLException {

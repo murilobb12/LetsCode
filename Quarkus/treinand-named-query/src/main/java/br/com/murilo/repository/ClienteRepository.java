@@ -21,7 +21,7 @@ public class ClienteRepository implements PanacheRepository<Cliente> {
 
     public List<Cliente> clienteListNamed(){
 
-        Query usuarios = getEntityManager().createNamedQuery("CONSULTAR_USUARIO");
+        TypedQuery<Cliente> usuarios = getEntityManager().createNamedQuery("CONSULTAR_USUARIO", Cliente.class);
 
         return usuarios.getResultList();
 
@@ -29,10 +29,8 @@ public class ClienteRepository implements PanacheRepository<Cliente> {
 
     public Cliente clienteListById(Long id){
 
-
             Optional<Cliente> byIdOptional = findByIdOptional(id);
             byIdOptional.orElseThrow(() -> new NotFoundException("ID não encontrado"));
-
 
         TypedQuery<Cliente> usuario_id = getEntityManager().createNamedQuery("CONSULTAR_USUARIO_ID", Cliente.class).setParameter(1,id);
 
@@ -64,6 +62,7 @@ public class ClienteRepository implements PanacheRepository<Cliente> {
 
         int i1 = 0;
 
+        //Alterar por for Cliente: cliente valor
         for (int i = 0; i < cliente.size(); i++) {
             clientes.add(new Cliente());
             Query query = getEntityManager().createNamedQuery("INSERIR_USUARIO")
